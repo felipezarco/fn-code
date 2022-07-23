@@ -1,0 +1,43 @@
+{
+  "name": "fn-code",
+  "version": "0.0.1",
+  "description": "Clean Code Functions (fn)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+  },
+  "keywords": [
+    "fn-code",
+    "functions",
+    "functional",
+    "functional-programming",
+    "fn",
+    "useful",
+    "methods",
+    "cleaner"
+  ],
+  "author": "Luiz Felipe Zarco <felipezarco@hotmail.com> (https://github.com/felipezarco)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/felipezarco/fn-code.git"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.0",
+    "coveralls": "^3.1.0",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.1.0",
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.9.2"
+  },
+  "bugs": {
+    "url": "https://github.com/felipezarco/fn-code/issues"
+  },
+  "homepage": "https://github.com/felipezarco/fn-code#readme"
+}
