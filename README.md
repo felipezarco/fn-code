@@ -20,10 +20,7 @@ yarn add fn-code
 Then import it:
 
 ```typescript
-// Typescript
 import fn from 'fn-code'
-// Commonjs
-const fn = require('fn-code')
 ```
 
 Importing as `fn` is the way I prefer to use it. But it's a matter of preference, you could either chose another name or deconstruct the functions:
@@ -67,7 +64,7 @@ This is meets the const criteria. But what if you would have a third species now
 const binomalName = (animal === 'cat') ? 'Felis catus' : ((animal === 'lion') ? 'Panthera leo' : 'Canis familiaris')
 ```
 
-Ughhh! This escalates badly. Also ternary operator is only clean if the third operand is default value (not another conditional).
+Ughhh! This escalates badly. Also, the ternary operator is only clean when the third operand is the default value (and not another conditional).
 
 So, you are clever and you make a function:
 
@@ -87,8 +84,6 @@ const binomalName = ((animal) => {
 
 This is better since we have const and switch. But passing those parameters to make the function pure still looks weird.
 
-Alternatively, if it feels more familiar you can use `fn.switch` as it is an alias for `fn.one`,.
-
 ## Usage
 
 You can use [fn-code](https://www.npmjs.com/package/fn-code) npm package to:
@@ -105,7 +100,8 @@ const binomalName = fn.one(animal, {
 })
 ````
 
-What if you want to have a default value for binomialName when no condition is met? For that, you can use the third optional argument, passing `{ default: '' }`
+But what if you want to have a **default** value for binomialName when no condition is met? 
+For that, you can use the third optional argument, passing `{ default: '' }`
 
 ````typescript
 import fn from 'fn-code'
@@ -116,6 +112,8 @@ const binomalName = fn.one(animal, {
   'dog': 'Canis familiaris'
 }, { default: 'Species not found' })
 ````
+
+Alternatively, if it feels more familiar you can use `fn.switch` instead, as it is an alias for `fn.one`.****
 
 ## Testing
 
