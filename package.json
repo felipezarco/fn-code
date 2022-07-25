@@ -1,6 +1,6 @@
 {
   "name": "fn-code",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Functions (fn) to make code cleaner",
   "main": "index.js",
   "types": "index",
