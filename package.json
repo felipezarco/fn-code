@@ -2,13 +2,19 @@
   "name": "fn-code",
   "version": "0.0.2",
   "description": "Functions (fn) to make code cleaner",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "types": "index",
   "scripts": {
     "build": "tsc",
     "test": "jest",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "README.md",
+    "LICENSE.md"
+  ],
   "keywords": [
     "fn-code",
     "functions",

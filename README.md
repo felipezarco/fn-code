@@ -30,7 +30,6 @@ import cleanCode from 'fn-code'
 import { one } from 'fn-code'
 ```
 
-
 ## Why Clean Code functions?
 
 You like functional programming. You find yourself doing shenanigans to achieve your goals. Let's see:
@@ -88,7 +87,7 @@ This is better since we have const and switch. But passing those parameters to m
 
 You can use [fn-code](https://www.npmjs.com/package/fn-code) npm package to:
 
-### Set const conditionally (fn.one):
+### Set const conditionally (fn.one/fn.switch):
 
 ````typescript
 import fn from 'fn-code'
@@ -113,7 +112,7 @@ const binomalName = fn.one(animal, {
 }, { default: 'Species not found' })
 ````
 
-Alternatively, if it feels more familiar you can use `fn.switch` instead, as it is an alias for `fn.one`.****
+Alternatively, if it feels more familiar you can use `fn.switch` instead, as it is an alias for `fn.one`.
 
 ## Testing
 
