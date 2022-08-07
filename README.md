@@ -112,6 +112,30 @@ const binomalName = fn.one(animal, {
 }, { default: 'Species not found' })
 ````
 
+But what if you want to pass a regex or a more specific comparison than `case == value` ?
+
+No problem! You can define the switch as an array of **case functions** and values!
+
+(These case functions must always return boolean)
+
+````typescript
+const binomalName = fn.one(animal, [
+    {
+      case: (str: string) => str.includes('cat'),
+      value: 'Felis catus'
+    },
+    {
+      case: (str: string) => str.includes('lion'),
+      value: 'Panthera leo'
+    },
+    {
+      case: (str: string) => str.includes('dog'),
+      value: 'Canis familiaris' 
+    }
+  ], { default: 'Species not found' })
+ 
+````
+
 Alternatively, if it feels more familiar you can use `fn.switch` instead, as it is an alias for `fn.one`.
 
 ## Testing

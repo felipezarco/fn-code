@@ -1405,11 +1405,6 @@ find-up@^4.0.0, find-up@^4.1.0:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
 
-fn-code@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/fn-code/-/fn-code-0.0.2.tgz#f080486f4124488b893dbbced9e87f7284f5b42f"
-  integrity sha512-YiQQWaxTFfBq7D+ctBiB96M/GDLZWatclAwmQoBUWYHCAq6K5WwCLWXWQoIu4i0PiAoK+/z6Wy+w2KTtiAJekg==
-
 for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"

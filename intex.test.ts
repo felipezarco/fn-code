@@ -1,4 +1,9 @@
-import f from './index'
+import f from './index.js'
+
+interface ISwitchObject {
+  case: any
+  value: any
+}
 
 test('one: switches object keys and return values', () => {
 
@@ -35,6 +40,37 @@ test('one: it retrieves a default value', () => {
   const dogGiven = f.switch('dog', dictionary)
   const alienGivenWithNoDefault = f.switch('alien', dictionary)
   const alienGivenWithDefault = f.switch('alien', dictionary, { default: 'Species not found!' })
+
+  expect(catGiven).toBe('Felis catus')
+  expect(lionGiven).toBe('Panthera leo')
+  expect(dogGiven).toBe('Canis familiaris')
+  expect(alienGivenWithNoDefault).toBe(undefined)
+  expect(alienGivenWithDefault).toBe('Species not found!')
+
+})
+
+test('one: I can use an array of objects for the switch', () => {
+
+  const obj: ISwitchObject[] = [
+    {
+      case: (str: string) => str.includes('cat'),
+      value: 'Felis catus'
+    },
+    {
+      case: (str: string) => str.includes('lion'),
+      value: 'Panthera leo'
+    },
+    {
+      case: (str: string) => str.includes('dog'),
+      value: 'Canis familiaris' 
+    }
+  ]
+
+  const catGiven = f.switch('nice cat', obj)
+  const lionGiven = f.switch('brave lion', obj)
+  const dogGiven = f.switch('coward dog', obj)
+  const alienGivenWithNoDefault = f.switch('alien', obj)
+  const alienGivenWithDefault = f.switch('alien', obj, { default: 'Species not found!' })
 
   expect(catGiven).toBe('Felis catus')
   expect(lionGiven).toBe('Panthera leo')
