@@ -1,4 +1,4 @@
-#  Fn functions 
+#  Fn functions
 
 > Functions (fn) that make your javascript code cleaner
 
@@ -11,7 +11,7 @@
 
 The latest version is available at: https://www.npmjs.com/package/fn-code
 
-Use your favorite package manager to install. For instance:  
+Use your favorite package manager to install. For instance:
 
 ```bash
 yarn add fn-code
@@ -36,31 +36,31 @@ You like functional programming. You find yourself doing shenanigans to achieve 
 
 ### **I want to make my variable a const, but depending on different values of another variable**
 
-For example: 
+For example:
 
-My const variable `binomalName` depends on the `animal` variable value.
+My const variable `binomialName` depends on the `animal` variable value.
 
 You try something like:
 
 ```typescript
-let binomalName = ''
+let binomialName = ''
 
-if(animal === 'cat') binomalName = 'Felis catus'
-if(animal === 'dog') binomalName = 'Canis familiaris'
+if(animal === 'cat') binomialName = 'Felis catus'
+if(animal === 'dog') binomialName = 'Canis familiaris'
 ```
 
-But this is not what you want since binomalName name is not a const.
+But this is not what you want since binomialName name is not a const.
 
-You try something like: 
+You try something like:
 
 ```typescript
-const binomalName = (animal === 'cat') ? 'Felis catus' : 'Canis familiaris'
+const binomialName = (animal === 'cat') ? 'Felis catus' : 'Canis familiaris'
 ```
 
-This is meets the const criteria. But what if you would have a third species now (animal 'lion' for instance)? 
+This is meets the const criteria. But what if you would have a third species now (animal 'lion' for instance)?
 
 ```typescript
-const binomalName = (animal === 'cat') ? 'Felis catus' : ((animal === 'lion') ? 'Panthera leo' : 'Canis familiaris')
+const binomialName = (animal === 'cat') ? 'Felis catus' : ((animal === 'lion') ? 'Panthera leo' : 'Canis familiaris')
 ```
 
 Ughhh! This escalates badly. Also, the ternary operator is only clean when the third operand is the default value (and not another conditional).
@@ -69,7 +69,7 @@ So, you are clever and you make a function:
 
 ```typescript
 
-const binomalName = ((animal) => {
+const binomialName = ((animal) => {
   switch (animal) {
     case 'cat':
       return 'Felis catus'
@@ -92,20 +92,20 @@ You can use [fn-code](https://www.npmjs.com/package/fn-code) npm package to:
 ````typescript
 import fn from 'fn-code'
 
-const binomalName = fn.one(animal, {
+const binomialName = fn.one(animal, {
   'cat': 'Felis catus'
   'lion': 'Panthera leo'
   'dog': 'Canis familiaris'
 })
 ````
 
-But what if you want to have a **default** value for binomialName when no condition is met? 
+But what if you want to have a **default** value for binomialName when no condition is met?
 For that, you can use the third optional argument, passing `{ default: '' }`
 
 ````typescript
 import fn from 'fn-code'
 
-const binomalName = fn.one(animal, {
+const binomialName = fn.one(animal, {
   'cat': 'Felis catus'
   'lion': 'Panthera leo'
   'dog': 'Canis familiaris'
@@ -119,7 +119,7 @@ No problem! You can define the switch as an array of **case functions** and valu
 (These case functions must always return boolean)
 
 ````typescript
-const binomalName = fn.one(animal, [
+const binomialName = fn.one(animal, [
     {
       case: (str: string) => str.includes('cat'),
       value: 'Felis catus'
@@ -130,10 +130,10 @@ const binomalName = fn.one(animal, [
     },
     {
       case: (str: string) => str.includes('dog'),
-      value: 'Canis familiaris' 
+      value: 'Canis familiaris'
     }
   ], { default: 'Species not found' })
- 
+
 ````
 
 Alternatively, if it feels more familiar you can use `fn.switch` instead, as it is an alias for `fn.one`.
