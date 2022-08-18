@@ -1,4 +1,4 @@
-import f from './index.js'
+import fn from './index.js'
 
 interface ISwitchObject {
   case: any
@@ -13,11 +13,11 @@ test('one: switches object keys and return values', () => {
     '3': 'três',
   }
 
-  const one = f.switch(1, translate)
-  const two = f.switch(2, translate)
-  const three = f.switch(3, translate)
-  const four = f.switch(4, translate)
-  const five = f.switch(5, {})
+  const one = fn.one(1, translate)
+  const two = fn.one(2, translate)
+  const three = fn.one(3, translate)
+  const four = fn.one(4, translate)
+  const five = fn.one(5, {})
 
   expect(one).toBe('um')
   expect(two).toBe('dois')
@@ -35,11 +35,11 @@ test('one: it retrieves a default value', () => {
     'dog':'Canis familiaris' 
   }
 
-  const catGiven = f.switch('cat', dictionary)
-  const lionGiven = f.switch('lion', dictionary)
-  const dogGiven = f.switch('dog', dictionary)
-  const alienGivenWithNoDefault = f.switch('alien', dictionary)
-  const alienGivenWithDefault = f.switch('alien', dictionary, { default: 'Species not found!' })
+  const catGiven = fn.one('cat', dictionary)
+  const lionGiven = fn.one('lion', dictionary)
+  const dogGiven = fn.one('dog', dictionary)
+  const alienGivenWithNoDefault = fn.one('alien', dictionary)
+  const alienGivenWithDefault = fn.one('alien', dictionary, { default: 'Species not found!' })
 
   expect(catGiven).toBe('Felis catus')
   expect(lionGiven).toBe('Panthera leo')
@@ -66,11 +66,11 @@ test('one: I can use an array of objects for the switch', () => {
     }
   ]
 
-  const catGiven = f.switch('nice cat', obj)
-  const lionGiven = f.switch('brave lion', obj)
-  const dogGiven = f.switch('coward dog', obj)
-  const alienGivenWithNoDefault = f.switch('alien', obj)
-  const alienGivenWithDefault = f.switch('alien', obj, { default: 'Species not found!' })
+  const catGiven = fn.one('nice cat', obj)
+  const lionGiven = fn.one('brave lion', obj)
+  const dogGiven = fn.one('coward dog', obj)
+  const alienGivenWithNoDefault = fn.one('alien', obj)
+  const alienGivenWithDefault = fn.one('alien', obj, { default: 'Species not found!' })
 
   expect(catGiven).toBe('Felis catus')
   expect(lionGiven).toBe('Panthera leo')
