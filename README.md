@@ -6,7 +6,10 @@
 
 [![npm](https://nodei.co/npm/fn-code.png)](https://www.npmjs.com/package/fn-code)
 
+### Summary
+Use `fn.one` to set constants conditionally 
 ![image](https://user-images.githubusercontent.com/11004919/185265735-e88edba6-8318-4a9e-94d7-795a733380d1.png)
+
 
 ## Installation
 
@@ -31,7 +34,7 @@ import cleanCode from 'fn-code'
 import { one } from 'fn-code'
 ```
 
-## Why Clean Code functions?
+## Why use these functions?
 
 You like functional programming. You find yourself doing shenanigans to achieve your goals. Let's see:
 
@@ -58,7 +61,7 @@ You try something like:
 const binomialName = (animal === 'cat') ? 'Felis catus' : 'Canis familiaris'
 ```
 
-This is meets the const criteria. But what if you would have a third species now (animal 'lion' for instance)?
+This is meets the const criteria. Now what if you would have a third species now (animal 'lion' for instance)?
 
 ```typescript
 const binomialName = (animal === 'cat') ? 'Felis catus' : ((animal === 'lion') ? 'Panthera leo' : 'Canis familiaris')
@@ -88,7 +91,7 @@ This is better since we have const and switch. But passing those parameters to m
 
 You can use [fn-code](https://www.npmjs.com/package/fn-code) npm package to:
 
-### Set const conditionally (fn.one/fn.switch):
+### 1. Set const conditionally (fn.one/fn.switch)
 
 ````typescript
 import fn from 'fn-code'
@@ -113,7 +116,7 @@ const binomialName = fn.one(animal, {
 }, { default: 'Species not found' })
 ````
 
-But what if you want to pass a regex or a more specific comparison than `case == value` ?
+Hold on. Not everything fits as an object key: you want to pass a regex or a more specific comparison than `case == value`..
 
 No problem! You can define the switch as an array of **case functions** and values!
 
@@ -138,6 +141,10 @@ const binomialName = fn.one(animal, [
 ````
 
 Alternatively, if it feels more familiar you can use `fn.switch` instead, as it is an alias for `fn.one`.
+
+### 2...
+
+Other similar functions might be added to the module.
 
 ## Testing
 
