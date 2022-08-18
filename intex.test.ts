@@ -79,3 +79,17 @@ test('one: I can use an array of objects for the switch', () => {
   expect(alienGivenWithDefault).toBe('Species not found!')
 
 })
+
+test('one: the image in README.md actually working', () => {
+   
+  process.env.NAME = "production"
+  
+  const databaseName = fn.one(process.env.NAME, {
+    local: "LOCAL_DATABASE",
+    development: "DEVELOPMENT_DATABASE",
+    staging: "STAGING_DATABASE",
+    production: "PRODUCTION_DATABASE",
+  })
+  
+  expect(databaseName).toBe("PRODUCTION_DATABASE")
+})
