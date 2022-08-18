@@ -6,6 +6,7 @@
 
 [![npm](https://nodei.co/npm/fn-code.png)](https://www.npmjs.com/package/fn-code)
 
+![image](https://user-images.githubusercontent.com/11004919/185265735-e88edba6-8318-4a9e-94d7-795a733380d1.png)
 
 ## Installation
 
