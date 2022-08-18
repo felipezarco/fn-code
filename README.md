@@ -6,10 +6,8 @@
 
 [![npm](https://nodei.co/npm/fn-code.png)](https://www.npmjs.com/package/fn-code)
 
-### Summary
-Use `fn.one` to set constants conditionally 
+#### Use `fn.one` to set constants conditionally:
 ![image](https://user-images.githubusercontent.com/11004919/185265735-e88edba6-8318-4a9e-94d7-795a733380d1.png)
-
 
 ## Installation
 
@@ -142,7 +140,7 @@ const binomialName = fn.one(animal, [
 
 Alternatively, if it feels more familiar you can use `fn.switch` instead, as it is an alias for `fn.one`.
 
-### 2...
+### 2. ...
 
 Other similar functions might be added to the module.
 
